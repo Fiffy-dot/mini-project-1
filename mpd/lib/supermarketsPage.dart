@@ -66,40 +66,48 @@ class SupermarketsPage extends StatelessWidget {
                           hintText: 'Enter a search term',
                       ),
                     ),
+                    Expanded(
+                      child: ListView(
+                          scrollDirection: Axis.vertical,
+                          children: <Widget>[
+                            Container(
+                              height: MediaQuery.of(context).size.height/4,
+                              decoration: BoxDecoration (
+                                  image: DecorationImage(
+                                      image: AssetImage("images/Component12.png")
+                                  )
+                              ),
+                              child: MaterialButton(
+                                minWidth: double.infinity,
+                                height:60,
+                                onPressed: () {
+                                  Navigator.push(context, MaterialPageRoute(builder : (context) => HorebuPage()));
+                                },
+                              ),
+                            ),
+                            // main page picture
+                            Container(
+                              height: MediaQuery.of(context).size.height/4,
+                              decoration: BoxDecoration (
+                                  image: DecorationImage(
+                                      image: AssetImage("images/Component13.png")
+                                  )
+                              ),
+                            ),
+                            // main page picture
+                            Container(
+                              height: MediaQuery.of(context).size.height/4,
+                              decoration: BoxDecoration (
+                                  image: DecorationImage(
+                                      image: AssetImage("images/Component14.png")
+                                  )
+                              ),
+                            ),
+                          ]
+                      )
+                    )
                     // main page picture
-                      Container(
-                        height: MediaQuery.of(context).size.height/4,
-                        decoration: BoxDecoration (
-                            image: DecorationImage(
-                                image: AssetImage("images/Component12.png")
-                            )
-                        ),
-                        child: MaterialButton(
-                          minWidth: double.infinity,
-                          height:60,
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder : (context) => HorebuPage()));
-                          },
-                        ),
-                      ),
-                      // main page picture
-                      Container(
-                        height: MediaQuery.of(context).size.height/4,
-                        decoration: BoxDecoration (
-                            image: DecorationImage(
-                                image: AssetImage("images/Component13.png")
-                            )
-                        ),
-                      ),
-                      // main page picture
-                      Container(
-                        height: MediaQuery.of(context).size.height/4,
-                        decoration: BoxDecoration (
-                            image: DecorationImage(
-                                image: AssetImage("images/Component14.png")
-                            )
-                        ),
-                      ),
+
 
                   ],
 
