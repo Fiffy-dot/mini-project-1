@@ -15,18 +15,19 @@ class SuggestionPlacedPage extends StatelessWidget {
           Center(
             child: Container(
               width: MediaQuery.of(context).size.width - 20,
-              height: 200,
-              //color: Colors.orange,decoration: BoxDecoration (
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: AssetImage("images/highFive.png")
-                )
-              ),
-              child: Text("Thanks for your suggestion",
-                  style: TextStyle(
-                      fontSize: 32, fontWeight: FontWeight.bold)
+              child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Image.asset("images/highFive.png"),
+                      Text("Thanks for your suggestion",
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                              fontSize: 32, fontWeight: FontWeight.bold))
+                    ],
+                  )
+              )
 
-              ),
             )
           )
       )
