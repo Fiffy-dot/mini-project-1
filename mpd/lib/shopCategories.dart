@@ -3,6 +3,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:mpd/models/category.dart';
+import 'package:mpd/supermarketsPage.dart';
 
 import 'helpers/utils2.dart';
 
@@ -65,7 +66,7 @@ class shopCategories extends StatelessWidget {
                         Navigator.push(
                             context,
                             MaterialPageRoute(
-                                builder: (context) => shopCategories()
+                                builder: (context) => const SupermarketsPage()
                             )
                         );
                       },
