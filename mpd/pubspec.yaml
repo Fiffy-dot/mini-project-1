@@ -64,6 +64,11 @@ flutter:
      - images/Component13.png
      - images/Component14.png
      - images/unsplash_-gOUx23DNks.png
+     - images/groceries.png
+     - images/restaurant.png
+     - images/Clothing.png
+     - images/SuperMarket.png
+     - images/Supplies.png
 #     - images/a_dot_ham.jpeg
 
   # An image asset can refer to one or more resolution-specific "variants", see
