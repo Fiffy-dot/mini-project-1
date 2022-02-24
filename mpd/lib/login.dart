@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:mpd/suggestplace.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -66,7 +67,9 @@ class LoginPage extends StatelessWidget {
                       child: MaterialButton(
                           minWidth: double.infinity,
                           height: 60,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder : (context) => SuggestPlacePage()));
+                          },
                           color: Colors.black,
                           elevation: 0,
                           shape: RoundedRectangleBorder(
@@ -79,6 +82,8 @@ class LoginPage extends StatelessWidget {
                             color: Colors.white,
                           )
                           )
+
+
 
                       ),
                     ),
