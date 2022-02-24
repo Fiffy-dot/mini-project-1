@@ -3,6 +3,7 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:mpd/home.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -53,7 +54,7 @@ class LoginPage extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.symmetric(horizontal: 40),
                     child: Container(
-                      padding: EdgeInsets.only(top: 30, left: 3),
+                      padding: EdgeInsets.only(top: 0, left: 0),
                       decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(50),
                           border: Border(
@@ -66,7 +67,9 @@ class LoginPage extends StatelessWidget {
                       child: MaterialButton(
                           minWidth: double.infinity,
                           height: 60,
-                          onPressed: () {},
+                          onPressed: () {
+                            Navigator.push(context, MaterialPageRoute(builder : (context) => Home()));
+                          },
                           color: Colors.black,
                           elevation: 0,
                           shape: RoundedRectangleBorder(
