@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:mpd/models/category.dart';
 import 'package:mpd/shopCategories.dart';
+import 'package:mpd/suggestplace.dart';
 
 import 'helpers/utils.dart';
 
@@ -41,7 +42,7 @@ class Home extends StatelessWidget {
         ),
         body: Container(
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.stretch,
+            //crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               const Padding(
                 padding: EdgeInsets.all(10),
@@ -123,6 +124,28 @@ class Home extends StatelessWidget {
                     );
                   },
                 ),
+              ),
+              MaterialButton(
+                  minWidth: 15,
+                  height: 40,
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder : (context) => SuggestPlacePage()));
+                  },
+                  color: Colors.black,
+                  elevation: 0,
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(50)
+                  ),
+                  child: Text(
+                      "Suggest a place", style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                    color: Colors.white,
+                  )
+                  )
+
+
+
               )
             ],
           ),

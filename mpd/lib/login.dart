@@ -69,7 +69,6 @@ class LoginPage extends StatelessWidget {
                           minWidth: double.infinity,
                           height: 60,
                           onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder : (context) => SuggestPlacePage()));
                             Navigator.push(context, MaterialPageRoute(builder : (context) => Home()));
                           },
                           color: Colors.black,

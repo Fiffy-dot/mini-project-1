@@ -31,6 +31,7 @@ class HorebuPage extends StatelessWidget {
             BottomNavigationBarItem(
               icon: Icon(Icons.add),
               label: 'New Sugg.',
+
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
@@ -38,7 +39,8 @@ class HorebuPage extends StatelessWidget {
             ),
           ],
         ),
-        body:SafeArea(
+        body:
+        SafeArea(
             child: Container(
                 width: double.infinity,
                 height:MediaQuery.of(context).size.height,

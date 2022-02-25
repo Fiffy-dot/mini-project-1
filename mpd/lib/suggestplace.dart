@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:mpd/suggestionplaced.dart';
 
 class SuggestPlacePage extends StatelessWidget {
+  const SuggestPlacePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +75,7 @@ class SuggestPlacePage extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 40),
                       child: Container(
-                        padding: EdgeInsets.only(top: 30, left: 3),
+                        padding: EdgeInsets.only(top: 0, left: 0),
                         decoration: BoxDecoration(
                             borderRadius: BorderRadius.circular(50),
                             border: Border(
