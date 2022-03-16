@@ -4,6 +4,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:mpd/models/category.dart';
 import 'package:mpd/supermarketsPage.dart';
+import 'package:mpd/widgets/sidemenu.dart';
 
 import 'helpers/utils2.dart';
 
@@ -15,29 +16,29 @@ class shopCategories extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.greenAccent,
-        bottomNavigationBar: BottomNavigationBar(
-          elevation: 1,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Homepage',
-              backgroundColor: Colors.blueGrey,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: 'Likes',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.add),
-              label: 'New Sugg.',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
-        ),
-        drawer: Drawer(),
+        // bottomNavigationBar: BottomNavigationBar(
+        //   elevation: 1,
+        //   items: const <BottomNavigationBarItem>[
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.home),
+        //       label: 'Homepage',
+        //       backgroundColor: Colors.blueGrey,
+        //     ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.favorite),
+        //       label: 'Likes',
+        //     ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.add),
+        //       label: 'New Sugg.',
+        //     ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.person),
+        //       label: 'Profile',
+        //     ),
+        //   ],
+        // ),
+        drawer: MenuDrawer(),
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.greenAccent,

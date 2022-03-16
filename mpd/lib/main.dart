@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:mpd/login.dart';
 import 'package:mpd/signup.dart';
+import 'package:mpd/widgets/sidemenu.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -18,6 +19,7 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.greenAccent,
+      drawer: MenuDrawer(),
       body:SafeArea(
         child: Container(
           width: double.infinity,

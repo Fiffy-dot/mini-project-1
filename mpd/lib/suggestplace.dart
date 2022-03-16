@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mpd/suggestionplaced.dart';
+import 'package:mpd/widgets/sidemenu.dart';
 
 class SuggestPlacePage extends StatelessWidget {
   const SuggestPlacePage({Key? key}) : super(key: key);
@@ -13,6 +14,7 @@ class SuggestPlacePage extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.greenAccent,
+        drawer: MenuDrawer(),
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.greenAccent,

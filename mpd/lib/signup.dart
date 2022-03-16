@@ -4,6 +4,7 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:mpd/home.dart';
+import 'package:mpd/widgets/sidemenu.dart';
 
 class SignUpPage extends StatelessWidget {
 
@@ -12,6 +13,7 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.greenAccent,
+      drawer: MenuDrawer(),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.greenAccent,

@@ -5,6 +5,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:mpd/suggestplace.dart';
 import 'package:mpd/home.dart';
+import 'package:mpd/widgets/sidemenu.dart';
 
 class LoginPage extends StatelessWidget {
   @override
@@ -12,6 +13,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.greenAccent,
+        drawer: MenuDrawer(),
         appBar: AppBar(
           elevation: 0,
           backgroundColor: Colors.greenAccent,

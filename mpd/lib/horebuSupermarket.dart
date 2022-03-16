@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:mpd/widgets/sidemenu.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -16,29 +17,30 @@ class HorebuPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.greenAccent,
-        bottomNavigationBar: BottomNavigationBar(
-          elevation: 1,
-          items: const <BottomNavigationBarItem>[
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Homepage',
-              backgroundColor: Colors.blueGrey,
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite),
-              label: 'Likes',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.add),
-              label: 'New Sugg.',
-
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person),
-              label: 'Profile',
-            ),
-          ],
-        ),
+        drawer: MenuDrawer(),
+        // bottomNavigationBar: BottomNavigationBar(
+        //   elevation: 1,
+        //   items: const <BottomNavigationBarItem>[
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.home),
+        //       label: 'Homepage',
+        //       backgroundColor: Colors.blueGrey,
+        //     ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.favorite),
+        //       label: 'Likes',
+        //     ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.add),
+        //       label: 'New Sugg.',
+        //
+        //     ),
+        //     BottomNavigationBarItem(
+        //       icon: Icon(Icons.person),
+        //       label: 'Profile',
+        //     ),
+        //   ],
+        // ),
         body:
         SafeArea(
             child: Container(
