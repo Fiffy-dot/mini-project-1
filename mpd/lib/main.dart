@@ -2,8 +2,11 @@
 
 import 'package:flutter/material.dart';
 import 'package:mpd/login.dart';
+import 'package:mpd/profile.dart';
+import 'package:mpd/shopCategories.dart';
+import 'package:mpd/supermarketsPage.dart';
 import 'package:mpd/signup.dart';
-import 'package:mpd/widgets/sidemenu.dart';
+
 
 void main() {
   runApp(MaterialApp(
@@ -14,12 +17,12 @@ void main() {
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
+  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.greenAccent,
-      drawer: MenuDrawer(),
       body:SafeArea(
         child: Container(
           width: double.infinity,

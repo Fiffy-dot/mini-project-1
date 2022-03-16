@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:mpd/favorites.dart';
 import 'package:mpd/login.dart';
+import 'package:mpd/profile.dart';
 
 import '../home.dart';
-import '../main.dart';
 
 class MenuDrawer extends StatelessWidget {
   const MenuDrawer({Key? key}) : super(key: key);
@@ -31,12 +32,15 @@ class MenuDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.person),
             title: Text('Profile'),
-            onTap: () => {},
+            onTap: () => {
+              Navigator.push(context, MaterialPageRoute(builder : (context) => ProfilePage()))
+            },
           ),
           ListTile(
             leading: Icon(Icons.favorite),
             title: Text('Favourites'),
-            onTap: () => {Navigator.of(context).pop()},
+            onTap: () => {
+              Navigator.push(context, MaterialPageRoute(builder : (context) => FavoritesPage()))},
           ),
           // ListTile(
           //   leading: Icon(Icons.border_color),
