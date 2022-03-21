@@ -61,13 +61,13 @@ class SignUpPage extends StatelessWidget {
                         // ),
                         TextField(
                             controller: emailController,
-                            decoration: InputDecoration(hintText: "UsernameX here")
+                            decoration: InputDecoration(hintText: "Email here")
                         ),
                         TextField(
                             controller: passwordController,
                             obscureText: true,
                             decoration: InputDecoration(
-                                hintText: "UsernameX here",
+                                hintText: "Password here",
 
                             )
                         ),

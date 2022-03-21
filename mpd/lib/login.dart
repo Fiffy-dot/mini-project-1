@@ -42,7 +42,7 @@ class LoginPage extends StatelessWidget {
                       Column(
                         children: <Widget>[
                           Text(
-                            "Sign Up!",
+                            "Login In!",
                             style: TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
@@ -60,12 +60,12 @@ class LoginPage extends StatelessWidget {
                           TextField(
                               controller: emailController,
                               decoration:
-                                  InputDecoration(hintText: "UsernameX here")),
+                                  InputDecoration(hintText: "Email here")),
                           TextField(
                               controller: passwordController,
                               obscureText: true,
                               decoration: InputDecoration(
-                                hintText: "UsernameX here",
+                                hintText: "Password here",
                               )),
                           // inputFile(label: "Username"),
                           // inputFile(label: "Email"),
