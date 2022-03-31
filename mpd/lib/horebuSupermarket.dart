@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:mpd/widgets/sidemenu.dart';
+import 'package:mpd/widget/sidemenu.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -18,29 +18,10 @@ class HorebuPage extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.greenAccent,
         drawer: MenuDrawer(),
-        // bottomNavigationBar: BottomNavigationBar(
-        //   elevation: 1,
-        //   items: const <BottomNavigationBarItem>[
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.home),
-        //       label: 'Homepage',
-        //       backgroundColor: Colors.blueGrey,
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.favorite),
-        //       label: 'Likes',
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.add),
-        //       label: 'New Sugg.',
-        //
-        //     ),
-        //     BottomNavigationBarItem(
-        //       icon: Icon(Icons.person),
-        //       label: 'Profile',
-        //     ),
-        //   ],
-        // ),
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.greenAccent,
+        ),
         body:
         SafeArea(
             child: Container(

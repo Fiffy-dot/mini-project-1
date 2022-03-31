@@ -7,7 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mpd/widgets/sidemenu.dart';
 import 'package:mpd/login.dart';
-
+import 'package:mpd/home.dart';
 
 class SignUpPage extends StatelessWidget {
   TextEditingController emailController = new TextEditingController();
@@ -24,7 +24,6 @@ class SignUpPage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.greenAccent,
-      drawer: MenuDrawer(),
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.greenAccent,

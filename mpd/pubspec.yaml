@@ -89,7 +89,12 @@ flutter:
      - images/Clothing.png
      - images/SuperMarket.png
      - images/Supplies.png
-#     - images/a_dot_ham.jpeg
+     - images/avatargirl.jpg
+     - images/icons/ke.svg
+     - images/simba.png
+     - images/horebu.png
+     - images/mac.png
+     - images/donuts.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
