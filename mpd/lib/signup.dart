@@ -2,10 +2,22 @@
 
 import 'dart:ui';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:mpd/widgets/sidemenu.dart';
+import 'package:mpd/login.dart';
 import 'package:mpd/home.dart';
 
 class SignUpPage extends StatelessWidget {
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
+  Future<FirebaseApp> _initialiseFirebase() async {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
+
+
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -16,69 +28,107 @@ class SignUpPage extends StatelessWidget {
         elevation: 0,
         backgroundColor: Colors.greenAccent,
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          padding: EdgeInsets.symmetric(horizontal: 40),
-          height: MediaQuery.of(context).size.height - 50,
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              Column(
-                children: <Widget>[
-                  Text("Sign Up!",
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),),
-                  SizedBox (
-                    height: 20
-                  ),
-                ],
-              ),
-              Column(
-                children: <Widget>[
-                  inputFile(label: "Username"),
-                  inputFile(label: "Email"),
-                  inputFile(label: "Password", obscureText: true),
-
-                ],
-              ),
-              Container(
-                padding: EdgeInsets.only(top: 0, left: 0),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    border: Border(
-                      bottom: BorderSide(color: Colors.black),
-                      top: BorderSide(color: Colors.black),
-                      left: BorderSide(color: Colors.black),
-                      right: BorderSide(color: Colors.black),
-                    )
-                ),
-                child: MaterialButton(
-                    minWidth: double.infinity,
-                    height: 60,
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder : (context) => Home()));
-                    },
-                    color: Colors.black,
-                    elevation: 0,
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50)
+      body: FutureBuilder( //SingleChildScrollView(
+        future: _initialiseFirebase(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+             return Container(
+                padding: EdgeInsets.symmetric(horizontal: 40),
+                height: MediaQuery.of(context).size.height - 50,
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: <Widget>[
+                    Column(
+                      children: <Widget>[
+                        Text("Sign Up!",
+                          style: TextStyle(
+                            fontSize: 30,
+                            fontWeight: FontWeight.bold,
+                          ),),
+                        SizedBox (
+                            height: 20
+                        ),
+                      ],
                     ),
-                    child: Text(
-                        "Create Account", style: TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                      color: Colors.white,
-                    )
-                    )
+                    Column(
 
-                ),
-              )
-            ],
-          )
-        )
+                      children: <Widget>[
+                        // TextField(
+                        //   controller: emailController,
+                        //   decoration: InputDecoration(hintText: "UsernameX here")
+                        // ),
+                        TextField(
+                            controller: emailController,
+                            decoration: InputDecoration(hintText: "Email here")
+                        ),
+                        TextField(
+                            controller: passwordController,
+                            obscureText: true,
+                            decoration: InputDecoration(
+                                hintText: "Password here",
+
+                            )
+                        ),
+                        // inputFile(label: "Username"),
+                        // inputFile(label: "Email"),
+                        // inputFile(label: "Password", obscureText: true),
+                      ],
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(top: 0, left: 0),
+                      decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(50),
+                          border: Border(
+                            bottom: BorderSide(color: Colors.black),
+                            top: BorderSide(color: Colors.black),
+                            left: BorderSide(color: Colors.black),
+                            right: BorderSide(color: Colors.black),
+                          )
+                      ),
+                      child: MaterialButton(
+                          minWidth: double.infinity,
+                          height: 60,
+                          onPressed: () async {
+                            FirebaseAuth auth = FirebaseAuth.instance;
+                            User? user;
+                            try{
+                                UserCredential userCredential = await auth.createUserWithEmailAndPassword(
+                                    email: emailController.text,
+                                    password: passwordController.text,
+                                );
+                                user = userCredential.user;
+                                user = auth.currentUser;
+                                Navigator.push(context, MaterialPageRoute(builder : (context) => LoginPage()));
+                              } on FirebaseAuthException catch (e) {
+                                    print(e);
+                                    print("Hi");
+                              }
+                            // Navigator.push(context, MaterialPageRoute(builder : (context) => LoginPage()));
+                          },
+                          color: Colors.black,
+                          elevation: 0,
+                          shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(50)
+                          ),
+                          child: Text(
+                              "Create Account", style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                            color: Colors.white,
+                          )
+                          )
+
+                      ),
+                    )
+                  ],
+                )
+            );
+          }
+
+          return Center(child: Text("Hi"));
+        },
+
       )
     );
   }
@@ -122,4 +172,5 @@ Widget inputFile({label, obscureText = false})
     ],
   );
 }
+
 

@@ -2,141 +2,160 @@
 
 import 'dart:ui';
 
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mpd/suggestplace.dart';
 import 'package:mpd/home.dart';
+import 'package:mpd/widgets/sidemenu.dart';
 
 class LoginPage extends StatelessWidget {
+  TextEditingController emailController = new TextEditingController();
+  TextEditingController passwordController = new TextEditingController();
+  Future<FirebaseApp> _initialiseFirebase() async {
+    FirebaseApp firebaseApp = await Firebase.initializeApp();
+    return firebaseApp;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        resizeToAvoidBottomInset: false,
+      resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.greenAccent,
+      drawer: MenuDrawer(),
+      appBar: AppBar(
+        elevation: 0,
         backgroundColor: Colors.greenAccent,
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.greenAccent,
-        ),
-        body: Container(
-          height: MediaQuery
-              .of(context)
-              .size
-              .height,
-          width: double.infinity,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: <Widget>[
-              Expanded(child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: <Widget>[
-                  Column(
+      ),
+      body: FutureBuilder(
+          //SingleChildScrollView(
+          future: _initialiseFirebase(),
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.done) {
+              return Container(
+                  padding: EdgeInsets.symmetric(horizontal: 40),
+                  height: MediaQuery.of(context).size.height - 50,
+                  width: double.infinity,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Text("Log In",
-                        style: TextStyle(
-                            fontSize: 32, fontWeight: FontWeight.bold),),
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Text("Welcome Back",
-                          style: TextStyle(
-                            fontSize: 15,
-                            color: Colors.black,
-                          ))
-                    ],
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 40),
-                    child: Column(
-                      children: <Widget>[
-                        inputFile(label: "Email"),
-                        inputFile(label: "Password", obscureText: true)
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 40),
-                    child: Container(
-                      padding: EdgeInsets.only(top: 0, left: 0),
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(50),
-                          border: Border(
-                            bottom: BorderSide(color: Colors.black),
-                            top: BorderSide(color: Colors.black),
-                            left: BorderSide(color: Colors.black),
-                            right: BorderSide(color: Colors.black),
-                          )
-                      ),
-                      child: MaterialButton(
-                          minWidth: double.infinity,
-                          height: 60,
-                          onPressed: () {
-                            Navigator.push(context, MaterialPageRoute(builder : (context) => Home()));
-                          },
-                          color: Colors.black,
-                          elevation: 0,
-                          shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(50)
+                      Column(
+                        children: <Widget>[
+                          Text(
+                            "Login In!",
+                            style: TextStyle(
+                              fontSize: 30,
+                              fontWeight: FontWeight.bold,
+                            ),
                           ),
-                          child: Text(
-                              "Log In", style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 18,
-                            color: Colors.white,
-                          )
-                          )
-
-
-
+                          SizedBox(height: 20),
+                        ],
                       ),
-                    ),
-                  ),
+                      Column(
+                        children: <Widget>[
+                          // TextField(
+                          //   controller: emailController,
+                          //   decoration: InputDecoration(hintText: "UsernameX here")
+                          // ),
+                          TextField(
+                              controller: emailController,
+                              decoration:
+                                  InputDecoration(hintText: "Email here")),
+                          TextField(
+                              controller: passwordController,
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                hintText: "Password here",
+                              )),
+                          // inputFile(label: "Username"),
+                          // inputFile(label: "Email"),
+                          // inputFile(label: "Password", obscureText: true),
+                        ],
+                      ),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 40),
+                        child: Container(
+                          padding: EdgeInsets.only(top: 0, left: 0),
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(50),
+                              border: Border(
+                                bottom: BorderSide(color: Colors.black),
+                                top: BorderSide(color: Colors.black),
+                                left: BorderSide(color: Colors.black),
+                                right: BorderSide(color: Colors.black),
+                              )),
+                          child: MaterialButton(
+                              minWidth: double.infinity,
+                              height: 60,
+                              onPressed: () async {
+                                FirebaseAuth auth = FirebaseAuth.instance;
+                                User? user;
+                                try {
+                                  UserCredential userCredential =
+                                      await auth.signInWithEmailAndPassword(
+                                          email: emailController.text,
+                                          password: passwordController.text);
 
-                ],
-              ))
-            ],
+                                  user = userCredential.user;
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) => Home()));
+                                } on FirebaseAuthException catch (e) {
+                                  print("Hi");
+                                }
+                                // Navigator.push(context, MaterialPageRoute(builder : (context) => Home()));
+                              },
+                              color: Colors.black,
+                              elevation: 0,
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(50)),
+                              child: Text("Log In",
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 18,
+                                    color: Colors.white,
+                                  ))),
+                        ),
+                      ),
+                    ],
+                  ));
+              // ],
+            }
+            return Center(child: Text("Hi"));
+          }
           ),
-        )
     );
   }
-
 }
 
-  Widget inputFile({label, obscureText = false})
-  {
+// }
+
+Widget inputFile({label, obscureText = false}) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
-      Text(
-        label,
-        style: TextStyle(
-          fontSize: 15,
-          fontWeight: FontWeight.w500,
-          color: Colors.black,
-        )
-      ),
+      Text(label,
+          style: TextStyle(
+            fontSize: 15,
+            fontWeight: FontWeight.w500,
+            color: Colors.black,
+          )),
       SizedBox(
-        height:20,
+        height: 20,
       ),
       TextField(
         obscureText: obscureText,
         decoration: InputDecoration(
-          contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(
-              color: Colors.black
+            contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+            enabledBorder: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.black),
             ),
-          ),
-          border: OutlineInputBorder(
-            borderSide: BorderSide(
-                color: Colors.black
-            ),
-          )
-        ),
+            border: OutlineInputBorder(
+              borderSide: BorderSide(color: Colors.black),
+            )),
       ),
-      SizedBox(
-        height:12
-      )
+      SizedBox(height: 12)
     ],
   );
-  }
-
-
+}
