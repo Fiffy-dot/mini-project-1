@@ -2,6 +2,7 @@
 import 'package:flutter/material.dart';
 import 'package:mpd/models/category.dart';
 import 'package:mpd/supermarketsPage.dart';
+import 'package:mpd/widget/appbar_widget.dart';
 import 'package:mpd/widget/sidemenu.dart';
 
 import 'helpers/utils2.dart';
@@ -14,11 +15,12 @@ class shopCategories extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.greenAccent,
-        drawer: MenuDrawer(),
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.greenAccent,
-        ),
+        endDrawer: MenuDrawer(),
+        // appBar: AppBar(
+        //   elevation: 0,
+        //   backgroundColor: Colors.greenAccent,
+        // ),
+        appBar: buildAppBar(context),
         body: Container(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,

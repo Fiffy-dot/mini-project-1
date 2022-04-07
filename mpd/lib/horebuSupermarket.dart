@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
+import 'package:mpd/widget/appbar_widget.dart';
 import 'package:mpd/widget/sidemenu.dart';
 
 void main() {
@@ -17,11 +18,12 @@ class HorebuPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.greenAccent,
-        drawer: MenuDrawer(),
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.greenAccent,
-        ),
+        endDrawer: MenuDrawer(),
+        // appBar: AppBar(
+        //   elevation: 0,
+        //   backgroundColor: Colors.greenAccent,
+        // ),
+        appBar: buildAppBar(context),
         body:
         SafeArea(
             child: Container(

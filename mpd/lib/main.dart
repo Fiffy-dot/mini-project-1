@@ -104,7 +104,7 @@ class HomePage extends StatelessWidget {
 
                     shape: RoundedRectangleBorder(
                         side: BorderSide(
-                            color: Colors.black
+                            color: Colors.greenAccent
                         ),
                         borderRadius: BorderRadius.circular(50)
                     ),

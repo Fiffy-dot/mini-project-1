@@ -4,10 +4,11 @@ import 'dart:ui';
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mpd/suggestplace.dart';
 import 'package:mpd/home.dart';
-import 'package:mpd/widgets/sidemenu.dart';
+import 'package:mpd/widget/sidemenu.dart';
 
 class LoginPage extends StatelessWidget {
   TextEditingController emailController = new TextEditingController();
@@ -22,11 +23,11 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.greenAccent,
-      drawer: MenuDrawer(),
-      appBar: AppBar(
-        elevation: 0,
-        backgroundColor: Colors.greenAccent,
-      ),
+      // drawer: MenuDrawer(),
+      // appBar: AppBar(
+      //   elevation: 0,
+      //   backgroundColor: Colors.greenAccent,
+      // ),
       body: FutureBuilder(
           //SingleChildScrollView(
           future: _initialiseFirebase(),
@@ -48,7 +49,7 @@ class LoginPage extends StatelessWidget {
                               fontWeight: FontWeight.bold,
                             ),
                           ),
-                          SizedBox(height: 20),
+                          SizedBox(height: 40),
                         ],
                       ),
                       Column(
@@ -102,7 +103,10 @@ class LoginPage extends StatelessWidget {
                                       MaterialPageRoute(
                                           builder: (context) => Home()));
                                 } on FirebaseAuthException catch (e) {
-                                  print("Hi");
+                                  print(e.code);
+                                  showDialog(
+                                      context: context,
+                                      builder: (BuildContext context) => leadDialog);
                                 }
                                 // Navigator.push(context, MaterialPageRoute(builder : (context) => Home()));
                               },
@@ -122,14 +126,15 @@ class LoginPage extends StatelessWidget {
                   ));
               // ],
             }
-            return Center(child: Text("Hi"));
+            return Center(child: Text(""));
           }
           ),
     );
   }
-}
 
-// }
+
+
+}
 
 Widget inputFile({label, obscureText = false}) {
   return Column(
@@ -159,3 +164,22 @@ Widget inputFile({label, obscureText = false}) {
     ],
   );
 }
+
+
+Dialog leadDialog = Dialog(
+  backgroundColor: Colors.greenAccent,
+  child: Text(
+    'Wrong email or password. Try again!',
+    textAlign: TextAlign.center,
+    style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
+
+  ),
+);
+
+// String validatePassword(String ecode) {
+//   if (ecode == 'wrong-password') {
+//     return "Wrong password. Make sure password is longer than 6 characters.";
+//   }
+//   // return null;
+// }
+

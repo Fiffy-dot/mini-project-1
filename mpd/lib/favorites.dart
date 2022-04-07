@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:mpd/horebuSupermarket.dart';
+import 'package:mpd/widget/appbar_widget.dart';
 import 'package:mpd/widget/sidemenu.dart';
 
 void main() {
@@ -19,11 +20,15 @@ class FavoritesPage extends StatelessWidget {
     return Scaffold(
         
         backgroundColor: Colors.greenAccent,
-         drawer: const MenuDrawer(),
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.greenAccent,
-        ),
+         endDrawer: const MenuDrawer(),
+         // appBar: AppBar(
+         //   iconTheme: IconThemeData(
+         //     color: Colors.white, //change your color here
+        //     elevation: 0,
+      //       backgroundColor: Colors.greenAccent,
+      //         ),
+         //   ),
+           appBar: buildAppBar(context),
         //bottomNavigationBar: BottomNavigationBar(
           //elevation: 1,
           //items: const <BottomNavigationBarItem>[

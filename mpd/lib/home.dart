@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:mpd/models/category.dart';
 import 'package:mpd/shopCategories.dart';
 import 'package:mpd/suggestplace.dart';
+import 'package:mpd/widget/appbar_widget.dart';
 import 'package:mpd/widget/sidemenu.dart';
 
 import 'helpers/utils.dart';
@@ -15,11 +16,12 @@ class Home extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.greenAccent,
 
-        drawer: MenuDrawer(),
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.greenAccent,
-        ),
+        endDrawer: MenuDrawer(),
+        // appBar: AppBar(
+        //   elevation: 0,
+        //   backgroundColor: Colors.greenAccent,
+        // ),
+        appBar: buildAppBar(context),
         body: Container(
           child: Column(
             //crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -33,7 +35,7 @@ class Home extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 60,
               ),
               Expanded(
                 child: ListView.builder(
@@ -105,28 +107,33 @@ class Home extends StatelessWidget {
                   },
                 ),
               ),
-              MaterialButton(
-                  minWidth: 15,
-                  height: 40,
-                  onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder : (context) => SuggestPlacePage()));
-                  },
-                  color: Colors.black,
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(50)
+                Align(
+                  alignment: Alignment.topRight,
+                  child: MaterialButton(
+                      minWidth: 15,
+                      height: 40,
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder : (context) => SuggestPlacePage()));
+                      },
+                      color: Colors.black,
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(50)
+                      ),
+                      child: Text(
+                          "Suggest a place", style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                        color: Colors.white,
+                      )
+                      )
                   ),
-                  child: Text(
-                      "Suggest a place", style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
-                    color: Colors.white,
-                  )
-                  )
 
 
 
-              )
+
+
+                )
             ],
           ),
         ));

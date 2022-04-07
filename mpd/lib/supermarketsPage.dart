@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:mpd/horebuSupermarket.dart';
+import 'package:mpd/widget/appbar_widget.dart';
 import 'package:mpd/widget/sidemenu.dart';
 
 void main() {
@@ -18,11 +19,12 @@ class SupermarketsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.greenAccent,
-        drawer: MenuDrawer(),
-        appBar: AppBar(
-          elevation: 0,
-          backgroundColor: Colors.greenAccent,
-        ),
+        endDrawer: MenuDrawer(),
+        // appBar: AppBar(
+        //   elevation: 0,
+        //   backgroundColor: Colors.greenAccent,
+        // ),
+        appBar: buildAppBar(context),
         body:SafeArea(
             child: Container(
                 width: double.infinity,
@@ -43,13 +45,13 @@ class SupermarketsPage extends StatelessWidget {
                         ),
                       ],
                     ),
-                    TextField(
-                      textAlign: TextAlign.center,
-                      decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hintText: 'Enter a search term',
-                      ),
-                    ),
+                    // TextField(
+                    //   textAlign: TextAlign.center,
+                    //   decoration: InputDecoration(
+                    //       border: InputBorder.none,
+                    //       hintText: 'Enter a search term',
+                    //   ),
+                    // ),
                     Expanded(
                       child: ListView(
                           scrollDirection: Axis.vertical,

@@ -5,7 +5,7 @@ import 'dart:ui';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:mpd/widgets/sidemenu.dart';
+import 'package:mpd/widget/sidemenu.dart';
 import 'package:mpd/login.dart';
 import 'package:mpd/home.dart';
 
@@ -46,13 +46,13 @@ class SignUpPage extends StatelessWidget {
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
                           ),),
+                        Text("\nALU email & Password must be longer than 6 characters", textAlign: TextAlign.center),
                         SizedBox (
                             height: 20
                         ),
                       ],
                     ),
                     Column(
-
                       children: <Widget>[
                         // TextField(
                         //   controller: emailController,
