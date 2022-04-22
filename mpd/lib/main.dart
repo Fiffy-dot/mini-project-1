@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:mpd/login.dart';
 import 'package:mpd/profile.dart';
-import 'package:mpd/shopCategories.dart';
+// import 'package:mpd/shoppage.dart';
 import 'package:mpd/supermarketsPage.dart';
 import 'package:mpd/signup.dart';
 
@@ -104,7 +104,7 @@ class HomePage extends StatelessWidget {
 
                     shape: RoundedRectangleBorder(
                         side: BorderSide(
-                            color: Colors.greenAccent
+                            color: Colors.black
                         ),
                         borderRadius: BorderRadius.circular(50)
                     ),

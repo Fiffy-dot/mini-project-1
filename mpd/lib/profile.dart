@@ -26,7 +26,6 @@ class ProfilePageState extends State<ProfilePage> {
     return Scaffold(
      
       backgroundColor: Colors.greenAccent,
-      endDrawer: MenuDrawer(),
       appBar: buildAppBar(context),
       body: ListView(
         physics: const BouncingScrollPhysics(),

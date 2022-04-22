@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mpd/categorylist.dart';
 import 'package:mpd/favorites.dart';
 import 'package:mpd/login.dart';
 import 'package:mpd/profile.dart';
@@ -26,7 +27,7 @@ class MenuDrawer extends StatelessWidget {
             leading: Icon(Icons.home),
             title: Text('Home'),
             onTap: () => {
-             Navigator.push(context, MaterialPageRoute(builder : (context) => Home()))
+             Navigator.push(context, MaterialPageRoute(builder : (context) => CategoryList()))
             },
           ),
           ListTile(

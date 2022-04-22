@@ -18,39 +18,13 @@ class FavoritesPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        
         backgroundColor: Colors.greenAccent,
-         endDrawer: const MenuDrawer(),
-         // appBar: AppBar(
-         //   iconTheme: IconThemeData(
-         //     color: Colors.white, //change your color here
-        //     elevation: 0,
-      //       backgroundColor: Colors.greenAccent,
-      //         ),
-         //   ),
-           appBar: buildAppBar(context),
-        //bottomNavigationBar: BottomNavigationBar(
-          //elevation: 1,
-          //items: const <BottomNavigationBarItem>[
-            //BottomNavigationBarItem(
-              //icon: Icon(Icons.home),
-              //label: 'Homepage',
-              //backgroundColor: Colors.blueGrey,
-            //),
-            //BottomNavigationBarItem(
-             // icon: Icon(Icons.favorite),
-             // label: 'Likes',
-           // ),
-            //BottomNavigationBarItem(
-            //  icon: Icon(Icons.add),
-            //  label: 'New Sugg.',
-           // ),
-            //BottomNavigationBarItem(
-            //  icon: Icon(Icons.person),
-            //  label: 'Profile',
-           // ),
-        //  ],
-       // ),
+        endDrawer: MenuDrawer(),
+        // appBar: AppBar(
+        //   elevation: 0,
+        //   backgroundColor: Colors.greenAccent,
+        // ),
+        appBar: buildAppBar(context),
         body: SafeArea(
             child: Container(
                 width: double.infinity,

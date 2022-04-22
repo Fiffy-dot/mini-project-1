@@ -5,7 +5,6 @@ import 'dart:ui';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:mpd/suggestionplaced.dart';
-import 'package:mpd/widget/appbar_widget.dart';
 
 class SuggestPlacePage extends StatelessWidget {
   const SuggestPlacePage({Key? key}) : super(key: key);
@@ -14,11 +13,10 @@ class SuggestPlacePage extends StatelessWidget {
     return Scaffold(
         resizeToAvoidBottomInset: false,
         backgroundColor: Colors.greenAccent,
-        // appBar: AppBar(
-        //   elevation: 0,
-        //   backgroundColor: Colors.greenAccent,
-        // ),
-        appBar: buildAppBar(context),
+        appBar: AppBar(
+          elevation: 0,
+          backgroundColor: Colors.greenAccent,
+        ),
         body: Container(
             height: MediaQuery.of(context).size.height,
             width: double.infinity,

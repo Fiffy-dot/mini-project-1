@@ -1,105 +1,80 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter/material.dart';
-import 'package:mpd/horebuSupermarket.dart';
-import 'package:mpd/widget/appbar_widget.dart';
-import 'package:mpd/widget/sidemenu.dart';
+// import 'package:flutter/cupertino.dart';
+// import 'package:flutter/material.dart';
+// import 'package:mpd/helpers/utils2.dart';
+// import 'package:mpd/models/category.dart';
+// import 'package:mpd/models/shops.dart';
+// import 'package:mpd/models/subcategory.dart';
+// import 'package:mpd/models/supermarkets.dart';
 
-void main() {
-  runApp(MaterialApp(
-    debugShowCheckedModeBanner: false,
-    home: SupermarketsPage(),
-  ));
-}
+// import 'widget/appbar_widget.dart';
+// import 'widget/sidemenu.dart';
 
-class SupermarketsPage extends StatelessWidget {
-  const SupermarketsPage({Key? key}) : super(key: key);
+// class ShopsPage extends StatelessWidget {
+//   Shops? selectedShops;
+//   List<Category> categories = Utils2.getCategories();
+//   ShopsPage({this.selectedShops});
 
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.greenAccent,
-        endDrawer: MenuDrawer(),
-        // appBar: AppBar(
-        //   elevation: 0,
-        //   backgroundColor: Colors.greenAccent,
-        // ),
-        appBar: buildAppBar(context),
-        body:SafeArea(
-            child: Container(
-                width: double.infinity,
-                height:MediaQuery.of(context).size.height,
-                padding: EdgeInsets.symmetric(horizontal:30, vertical:10),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: <Widget>[
-                    Column(
-                      children: <Widget> [
-                        Text(
-                          "Supermarkets",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 32,
-                          ),
-                        ),
-                      ],
-                    ),
-                    // TextField(
-                    //   textAlign: TextAlign.center,
-                    //   decoration: InputDecoration(
-                    //       border: InputBorder.none,
-                    //       hintText: 'Enter a search term',
-                    //   ),
-                    // ),
-                    Expanded(
-                      child: ListView(
-                          scrollDirection: Axis.vertical,
-                          children: <Widget>[
-                            Container(
-                              height: MediaQuery.of(context).size.height/4,
-                              decoration: BoxDecoration (
-                                  image: DecorationImage(
-                                      image: AssetImage("images/Component12.png")
-                                  )
-                              ),
-                              child: MaterialButton(
-                                minWidth: double.infinity,
-                                height:60,
-                                onPressed: () {
-                                  Navigator.push(context, MaterialPageRoute(builder : (context) => HorebuPage()));
-                                },
-                              ),
-                            ),
-                            // main page picture
-                            Container(
-                              height: MediaQuery.of(context).size.height/4,
-                              decoration: BoxDecoration (
-                                  image: DecorationImage(
-                                      image: AssetImage("images/Component13.png")
-                                  )
-                              ),
-                            ),
-                            // main page picture
-                            Container(
-                              height: MediaQuery.of(context).size.height/4,
-                              decoration: BoxDecoration (
-                                  image: DecorationImage(
-                                      image: AssetImage("images/Component14.png")
-                                  )
-                              ),
-                            ),
-                          ]
-                      )
-                    )
-                    // main page picture
+//   @override
+//   Widget build(BuildContext context) {
+//     return Scaffold(
+//         backgroundColor: Colors.greenAccent,
+//         endDrawer: MenuDrawer(),
+//         appBar: buildAppBar(context),
+//         body: Container(
+//             child: Column(
+//           crossAxisAlignment: CrossAxisAlignment.stretch,
+//           children: [
+//             const Padding(
+//                 padding: EdgeInsets.all(10),
+//                 child: Text(
+//                   'Supermarkets',
+//                   textAlign: TextAlign.center,
+//                   style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+//                 )),
+//             Expanded(
+//               child: ListView.builder(
+//                 itemCount: supermarkets.length,
+//                 itemBuilder: (BuildContext ctx, int index) {
+//                   return ShopCard(
+//                       // shops: supermarkets[index],
+//                       onCardClick: () {
+//                         var shopCategory;
+//                         Navigator.push(
+//                             context,
+//                             MaterialPageRoute(
+//                                 builder: (context) => ShopsPage(
+//                                    shops: this.selectedShops[index])));
+//                       });
+//                 },
+//               ),
+//             ),
+//             Align(
+//               alignment: Alignment.topRight,
+//               child: MaterialButton(
+//                   minWidth: 15,
+//                   height: 40,
+//                   onPressed: () {
+//                     Navigator.push(
+//                         context,
+//                         MaterialPageRoute(
+//                             builder: (context) => SuggestPlacePage()));
+//                   },
+//                   color: Colors.black,
+//                   elevation: 10,
+//                   shape: RoundedRectangleBorder(
+//                       borderRadius: BorderRadius.circular(50)),
+//                   child: Text("Suggest a place",
+//                       style: TextStyle(
+//                         fontWeight: FontWeight.bold,
+//                         fontSize: 18,
+//                         color: Colors.white,
+//                       ))),
+//             )
+//           ],
+//         )));
+//   }
 
-
-                  ],
-
-                )
-            )
-        )
-    );
-  }
-}
+//   // ShopsPage({required shopCategory}) {}
+// }

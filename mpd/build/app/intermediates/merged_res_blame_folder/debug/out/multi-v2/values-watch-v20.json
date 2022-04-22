@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\wanji\\StudioProjects\\mini-project-1\\mpd\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
+            "outputFile": "C:\\Users\\Product Design\\OneDrive\\Documents\\Projects\\Flutter\\100\\100\\mini-project-1\\mpd\\build\\app\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-watch-v20\\values-watch-v20.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\wanji\\.gradle\\caches\\transforms-2\\files-2.1\\8205a8e01cd59fdd3cf38b885aaae578\\jetified-play-services-auth-16.0.1\\res\\values-watch-v20\\values.xml",
+                    "source": "C:\\Users\\Product Design\\.gradle\\caches\\transforms-2\\files-2.1\\b5899d362b4c9d1f0db90b8ef233fab9\\jetified-play-services-auth-16.0.1\\res\\values-watch-v20\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11",
                         "startColumns": "0,0,0,0,0,0,0,0",

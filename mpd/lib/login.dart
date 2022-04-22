@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:mpd/categorylist.dart';
 import 'package:mpd/suggestplace.dart';
 import 'package:mpd/home.dart';
 import 'package:mpd/widget/sidemenu.dart';
@@ -43,7 +44,7 @@ class LoginPage extends StatelessWidget {
                       Column(
                         children: <Widget>[
                           Text(
-                            "Login In!",
+                            "Login",
                             style: TextStyle(
                               fontSize: 30,
                               fontWeight: FontWeight.bold,
@@ -101,7 +102,7 @@ class LoginPage extends StatelessWidget {
                                   Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                          builder: (context) => Home()));
+                                          builder: (context) => CategoryList()));
                                 } on FirebaseAuthException catch (e) {
                                   print(e.code);
                                   showDialog(

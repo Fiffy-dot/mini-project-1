@@ -95,6 +95,45 @@ flutter:
      - images/horebu.png
      - images/mac.png
      - images/donuts.png
+     - images/java.png
+     - images/bosini.png
+     - images/billy.png
+     - images/2000.png
+     - images/vivo.png
+     - images/charisma.png
+     - images/tea.png
+     - images/brush.png
+     - images/flour.png
+     - images/oil.png
+     - images/vivo1.png
+     - images/vivo2.png
+     - images/vivo3.png
+     - images/vivo4.png
+     - images/bosini1.png
+     - images/bosini2.png
+     - images/bosini3.png
+     - images/bosini4.png
+     - images/C1.png
+     - images/C2.png
+     - images/C3.png
+     - images/C4.png
+     - images/T1.png
+     - images/T2.png
+     - images/T3.png
+     - images/T4.png
+     - images/b1.png
+     - images/b2.png
+     - images/b3.png
+     - images/b4.png
+     - images/k1.png
+     - images/k2.png
+     - images/k3.png
+     - images/k4.png
+    
+
+
+
+    
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

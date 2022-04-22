@@ -1,18 +1,15 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:mpd/widget/appbar_widget.dart';
 class SuggestionPlacedPage extends StatelessWidget {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // appBar: AppBar(
-      //   backgroundColor: Colors.transparent,
-      // ),
-        appBar: buildAppBar(context),
-        backgroundColor: Colors.greenAccent,
-        body: BackdropFilter(
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
+      backgroundColor: Colors.transparent,
+      body:
+      BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
           child:
           Center(
