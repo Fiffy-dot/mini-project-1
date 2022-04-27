@@ -1,7 +1,8 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
-import 'package:mpd/horebuSupermarket.dart';
+// import 'package:mpd/horebuSupermarket.dart';
+// import 'package:mpd/selectedcategorypage.dart';
 import 'package:mpd/widget/appbar_widget.dart';
 import 'package:mpd/widget/sidemenu.dart';
 
@@ -37,7 +38,7 @@ class FavoritesPage extends StatelessWidget {
                     Column(
                       children: <Widget>[
                         Text(
-                          "Favorites",
+                          "Favourites",
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 32,
@@ -57,48 +58,66 @@ class FavoritesPage extends StatelessWidget {
                             scrollDirection: Axis.vertical,
                             children: <Widget>[
                           Container(
-                            height: MediaQuery.of(context).size.height / 4,
+                            height: MediaQuery.of(context).size.height / 1.8,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image:
                                         AssetImage("images/horebu.png"))),
-                            child: MaterialButton(
-                              minWidth: double.infinity,
-                              height: 60,
-                              onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => HorebuPage()));
-                              },
-                            ),
+                            child: Text("\n\n\n\n\n\nHorebu",
+                                textAlign: TextAlign.center,
+                                style: const TextStyle(
+                                    color: Colors.white,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 25,
+                                    overflow: TextOverflow.ellipsis)),
                           ),
                           const SizedBox(height: 20),
                           // main page picture
                           Container(
-                            height: MediaQuery.of(context).size.height / 4,
+                            height: MediaQuery.of(context).size.height / 1.8,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image:
                                         AssetImage("images/mac.png"))),
+                              child: Text("\n\n\n\n\n\nMac",
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 25,
+                                      overflow: TextOverflow.ellipsis))
                           ),
                           const SizedBox(height: 20),
                           // main page picture
                           Container(
-                            height: MediaQuery.of(context).size.height / 4,
+                            height: MediaQuery.of(context).size.height / 1.8,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image:
                                         AssetImage("images/simba.png"))),
+                              child: Text("\n\n\n\n\n\nSimba",
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 25,
+                                      overflow: TextOverflow.ellipsis))
                           ),
                           const SizedBox(height: 20),
                           // main page picture
                           Container(
-                            height: MediaQuery.of(context).size.height / 4,
+                            height: MediaQuery.of(context).size.height / 1.8,
                             decoration: BoxDecoration(
                                 image: DecorationImage(
                                     image:
                                         AssetImage("images/donuts.png"))),
+                              child: Text("\n\n\n\n\n\nRiders",
+                                  textAlign: TextAlign.center,
+                                  style: const TextStyle(
+                                      color: Colors.white,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 25,
+                                      overflow: TextOverflow.ellipsis))
                           ),
                            const SizedBox(height: 20),
                         ]))

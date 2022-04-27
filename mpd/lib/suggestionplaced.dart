@@ -1,5 +1,8 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:mpd/categorylist.dart';
+
+// import 'main.dart';
 class SuggestionPlacedPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -23,9 +26,35 @@ class SuggestionPlacedPage extends StatelessWidget {
                       Text("Thanks for your suggestion",
                           textAlign: TextAlign.center,
                           style: TextStyle(
-                              fontSize: 32, fontWeight: FontWeight.bold))
+                              fontSize: 32, fontWeight: FontWeight.bold)),
+                      MaterialButton(
+                        padding: EdgeInsets.all(5),
+                        minWidth: double.infinity,
+                        height:30,
+                        color: Colors.black,
+                        onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder : (context) => CategoryList()));
+                        },
+
+                        shape: RoundedRectangleBorder(
+                            side: BorderSide(
+                                color: Colors.black
+                            ),
+                            borderRadius: BorderRadius.circular(50)
+                        ),
+                        child: Text(
+                            "Back to category page",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 16,
+                                color: Colors.white
+                            )
+                        ),
+
+                      )
                     ],
-                  )
+
+                  ),
               )
 
             )

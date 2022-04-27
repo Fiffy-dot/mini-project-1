@@ -76,17 +76,18 @@ class SuggestPlacePage extends StatelessWidget {
                       padding: EdgeInsets.symmetric(horizontal: 40),
                       child: Container(
                         padding: EdgeInsets.only(top: 0, left: 0),
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(50),
-                            border: Border(
-                              bottom: BorderSide(color: Colors.black),
-                              top: BorderSide(color: Colors.black),
-                              left: BorderSide(color: Colors.black),
-                              right: BorderSide(color: Colors.black),
-                            )),
+                        // decoration: BoxDecoration(
+                        //     // borderRadius: BorderRadius.circular(40),
+                        //     // border: Border(
+                        //     //   bottom: BorderSide(color: Colors.black),
+                        //     //   top: BorderSide(color: Colors.black),
+                        //     //   left: BorderSide(color: Colors.black),
+                        //     //   right: BorderSide(color: Colors.black),
+                        //     // )
+                        // ),
                         child: MaterialButton(
                             minWidth: double.infinity,
-                            height: 60,
+                            height: 40,
                             onPressed: () {
                               print("Button pressed");
                               showCupertinoModalPopup(
@@ -96,7 +97,7 @@ class SuggestPlacePage extends StatelessWidget {
                             color: Colors.black,
                             elevation: 0,
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(50)),
+                                borderRadius: BorderRadius.circular(40)),
                             child: Text("Submit suggestion",
                                 style: TextStyle(
                                   fontWeight: FontWeight.bold,
