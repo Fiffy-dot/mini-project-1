@@ -7,6 +7,8 @@ import 'package:mpd/profile.dart';
 import 'package:mpd/supermarketsPage.dart';
 import 'package:mpd/signup.dart';
 
+import 'app_directions.dart';
+
 
 void main() {
   runApp(MaterialApp(
@@ -72,7 +74,7 @@ class HomePage extends StatelessWidget {
                     height:60,
                     color: Colors.black,
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder : (context) => SignUpPage()));
+                      Navigator.push(context, MaterialPageRoute(builder : (context) => InstructionPage()));
                     },
 
                     shape: RoundedRectangleBorder(
@@ -102,12 +104,12 @@ class HomePage extends StatelessWidget {
                       Navigator.push(context, MaterialPageRoute(builder : (context) => LoginPage()));
                     },
 
-                    shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                            color: Colors.black
-                        ),
-                        borderRadius: BorderRadius.circular(50)
-                    ),
+                    // shape: RoundedRectangleBorder(
+                    //     side: BorderSide(
+                    //         color: Colors.black
+                    //     ),
+                    //     borderRadius: BorderRadius.circular(50)
+                    // ),
                     child: Text(
                         "I already have an account",
                         style: TextStyle(

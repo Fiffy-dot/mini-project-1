@@ -88,34 +88,34 @@ class ShopListState extends State<ShopList> {
                             ])
                           ],
                         )),
-                    Positioned(
-                        right: 20,
-                        top: 50,
-                        child: Container(
-                            // ignore: prefer_const_constructors
-                            padding: EdgeInsets.only(
-                                top: 5, left: 15, right: 15, bottom: 5),
-                            // ignore: prefer_const_constructors
-                            decoration: BoxDecoration(
-                                color: Colors.red,
-                                borderRadius: BorderRadius.circular(20),
-                                boxShadow: [
-                                  BoxShadow(
-                                      color: Colors.black.withOpacity(0.8))
-                                ]),
-                            child: Row(
-                              children: const [
-                                Text(
-                                  '3',
-                                  style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                  ),
-                                ),
-                                Icon(Icons.shopping_cart,
-                                    color: Colors.white, size: 20)
-                              ],
-                            )))
+                    // Positioned(
+                    //     right: 20,
+                    //     top: 50,
+                    //     child: Container(
+                    //         // ignore: prefer_const_constructors
+                    //         padding: EdgeInsets.only(
+                    //             top: 5, left: 15, right: 15, bottom: 5),
+                    //         // ignore: prefer_const_constructors
+                    //         decoration: BoxDecoration(
+                    //             color: Colors.red,
+                    //             borderRadius: BorderRadius.circular(20),
+                    //             boxShadow: [
+                    //               BoxShadow(
+                    //                   color: Colors.black.withOpacity(0.8))
+                    //             ]),
+                    //         child: Row(
+                    //           children: const [
+                    //             Text(
+                    //               '3',
+                    //               style: TextStyle(
+                    //                 color: Colors.white,
+                    //                 fontSize: 20,
+                    //               ),
+                    //             ),
+                    //             Icon(Icons.shopping_cart,
+                    //                 color: Colors.white, size: 20)
+                    //           ],
+                    //         )))
                   ],
                 )),
             Expanded(

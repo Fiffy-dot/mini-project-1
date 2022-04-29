@@ -33,7 +33,7 @@ class SuggestPlacePage extends StatelessWidget {
           elevation: 0,
           backgroundColor: Colors.greenAccent,
         ),
-<<<<<<< HEAD
+// <<<<<<< HEAD
         body: FutureBuilder(
             future: _initializeFirebase(),
             builder: (context, snapshot){
@@ -150,101 +150,101 @@ class SuggestPlacePage extends StatelessWidget {
             }
         )
     );
-=======
-        body: Container(
-            height: MediaQuery.of(context).size.height,
-            width: double.infinity,
-            child: SingleChildScrollView(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        Text(
-                          "Suggest a place",
-                          style: TextStyle(
-                              fontSize: 32, fontWeight: FontWeight.bold),
-                        ),
-                        SizedBox(
-                          height: 20,
-                        ),
-                        Text(
-                            "Fill this form with the necessary details and the place mentioned will be added and reviewed within a week",
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.black,
-                            ))
-                      ],
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsets.symmetric(horizontal: 40, vertical: 20),
-                      child: Column(
-                        children: <Widget>[
-                          inputFile(
-                              label: "Name of the Place", hint: "eg. Nairobi"),
-                          inputFile(
-                              label: "Location",
-                              obscureText: true,
-                              hint: "eg.kimironko"),
-                          inputFile(
-                              label: "Items available here",
-                              hint: "eg.foodstuffs,vegetables"),
-                          inputFile(
-                              label: "Appropriate tags",
-                              hint: "eg.groceries,beauty"),
-                          inputFile(
-                              label: "Why is it beneficial to the community?",
-                              hint: "eg. has affordable stuff"),
-                          inputFile(
-                              label: "Your initial rating", hint: "eg. 1"),
-                          inputFile(label: "Additional comments")
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 40),
-                      child: Container(
-                        padding: EdgeInsets.only(top: 0, left: 0),
-                        // decoration: BoxDecoration(
-                        //     // borderRadius: BorderRadius.circular(40),
-                        //     // border: Border(
-                        //     //   bottom: BorderSide(color: Colors.black),
-                        //     //   top: BorderSide(color: Colors.black),
-                        //     //   left: BorderSide(color: Colors.black),
-                        //     //   right: BorderSide(color: Colors.black),
-                        //     // )
-                        // ),
-                        child: MaterialButton(
-                            minWidth: double.infinity,
-                            height: 40,
-                            onPressed: () {
-                              print("Button pressed");
-                              showCupertinoModalPopup(
-                                  context: context,
-                                  builder: (context) => SuggestionPlacedPage());
-                            },
-                            color: Colors.black,
-                            elevation: 0,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(40)),
-                            child: Text("Submit suggestion",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 18,
-                                  color: Colors.white,
-                                ))),
-                      ),
-                    ),
-                  ],
-                )
-              ],
-            ))));
->>>>>>> 7bd20565ac3a46a6765c5200740cd2a9b1de204f
+// =======
+//         body: Container(
+//             height: MediaQuery.of(context).size.height,
+//             width: double.infinity,
+//             child: SingleChildScrollView(
+//                 child: Column(
+//                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//               children: <Widget>[
+//                 Column(
+//                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+//                   children: <Widget>[
+//                     Column(
+//                       children: <Widget>[
+//                         Text(
+//                           "Suggest a place",
+//                           style: TextStyle(
+//                               fontSize: 32, fontWeight: FontWeight.bold),
+//                         ),
+//                         SizedBox(
+//                           height: 20,
+//                         ),
+//                         Text(
+//                             "Fill this form with the necessary details and the place mentioned will be added and reviewed within a week",
+//                             textAlign: TextAlign.center,
+//                             style: TextStyle(
+//                               fontSize: 15,
+//                               color: Colors.black,
+//                             ))
+//                       ],
+//                     ),
+//                     Padding(
+//                       padding:
+//                           EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+//                       child: Column(
+//                         children: <Widget>[
+//                           inputFile(
+//                               label: "Name of the Place", hint: "eg. Nairobi"),
+//                           inputFile(
+//                               label: "Location",
+//                               obscureText: true,
+//                               hint: "eg.kimironko"),
+//                           inputFile(
+//                               label: "Items available here",
+//                               hint: "eg.foodstuffs,vegetables"),
+//                           inputFile(
+//                               label: "Appropriate tags",
+//                               hint: "eg.groceries,beauty"),
+//                           inputFile(
+//                               label: "Why is it beneficial to the community?",
+//                               hint: "eg. has affordable stuff"),
+//                           inputFile(
+//                               label: "Your initial rating", hint: "eg. 1"),
+//                           inputFile(label: "Additional comments")
+//                         ],
+//                       ),
+//                     ),
+//                     Padding(
+//                       padding: EdgeInsets.symmetric(horizontal: 40),
+//                       child: Container(
+//                         padding: EdgeInsets.only(top: 0, left: 0),
+//                         // decoration: BoxDecoration(
+//                         //     // borderRadius: BorderRadius.circular(40),
+//                         //     // border: Border(
+//                         //     //   bottom: BorderSide(color: Colors.black),
+//                         //     //   top: BorderSide(color: Colors.black),
+//                         //     //   left: BorderSide(color: Colors.black),
+//                         //     //   right: BorderSide(color: Colors.black),
+//                         //     // )
+//                         // ),
+//                         child: MaterialButton(
+//                             minWidth: double.infinity,
+//                             height: 40,
+//                             onPressed: () {
+//                               print("Button pressed");
+//                               showCupertinoModalPopup(
+//                                   context: context,
+//                                   builder: (context) => SuggestionPlacedPage());
+//                             },
+//                             color: Colors.black,
+//                             elevation: 0,
+//                             shape: RoundedRectangleBorder(
+//                                 borderRadius: BorderRadius.circular(40)),
+//                             child: Text("Submit suggestion",
+//                                 style: TextStyle(
+//                                   fontWeight: FontWeight.bold,
+//                                   fontSize: 18,
+//                                   color: Colors.white,
+//                                 ))),
+//                       ),
+//                     ),
+//                   ],
+//                 )
+//               ],
+//             ))));
+// >>>>>>> 7bd20565ac3a46a6765c5200740cd2a9b1de204f
   }
 }
 
