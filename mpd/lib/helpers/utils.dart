@@ -3,7 +3,7 @@ import 'package:mpd/models/category.dart';
 import '../models/category.dart';
 import '../models/category_part.dart';
 
-import '../models/SubCategory.dart';
+import '../models/subcategory.dart';
 
 
 class Utils {
