@@ -7,7 +7,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 // import 'package:mpd/widgets/sidemenu.dart';
 import 'package:mpd/login.dart';
-import 'package:mpd/home.dart';
+// import 'package:mpd/home.dart';
 
 class SignUpPage extends StatelessWidget {
   TextEditingController emailController = new TextEditingController();
@@ -46,6 +46,9 @@ class SignUpPage extends StatelessWidget {
                             fontSize: 30,
                             fontWeight: FontWeight.bold,
                           ),),
+                        Text("Valid Email & Password longer than 6 characters required", textAlign: TextAlign.center, style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold)),
                         SizedBox (
                             height: 20
                         ),
@@ -124,29 +127,29 @@ class SignUpPage extends StatelessWidget {
                       
                     ),
 
-                    MaterialButton(
-                    minWidth: double.infinity,
-                    height:60,
-                    onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder : (context) => LoginPage()));
-                    },
-
-                    shape: RoundedRectangleBorder(
-                        side: BorderSide(
-                            // color: Colors.black
-                        ),
-                        borderRadius: BorderRadius.circular(50)
-                    ),
-                    child: Text(
-                        "Log In",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 12,
-                            color: Colors.black,
-                        )
-                    ),
-
-                  ),
+                  //   MaterialButton(
+                  //   minWidth: double.infinity,
+                  //   height:60,
+                  //   onPressed: () {
+                  //     Navigator.push(context, MaterialPageRoute(builder : (context) => LoginPage()));
+                  //   },
+                  //
+                  //   shape: RoundedRectangleBorder(
+                  //       side: BorderSide(
+                  //           // color: Colors.black
+                  //       ),
+                  //       borderRadius: BorderRadius.circular(50)
+                  //   ),
+                  //   // child: Text(
+                  //   //     "Log In",
+                  //   //     style: TextStyle(
+                  //   //         fontWeight: FontWeight.bold,
+                  //   //         fontSize: 12,
+                  //   //         color: Colors.black,
+                  //   //     )
+                  //   // ),
+                  //
+                  // ),
                   ],
 
                   
